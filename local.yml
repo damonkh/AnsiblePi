@@ -1,5 +1,7 @@
-hosts: localhost
-become: true
-tasks:
-  name: Install HTOP
-  apt: name=htop
+- hosts: localhost
+  become: true
+  tasks:
+   - name: Install HTOP
+     apt: 
+       name:htop
+       state: present
