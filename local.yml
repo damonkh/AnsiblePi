@@ -1,7 +1,9 @@
 - hosts: localhost
   become: true
-  tasks:
-   - name: Install HTOP
+  pre_tasks:
+   - name: Update Repositories
      apt: 
-       name: htop
-       state: present
+       update_cache: yes
+       changed_when: false
+  tasks:
+    - include: tasks/packages.yml
